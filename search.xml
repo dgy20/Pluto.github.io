@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>LazyFunction</title>
+    <url>/2021/06/03/LazyFunction/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>function</category>
+      </categories>
+      <tags>
+        <tag>高阶函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>debounce &amp; throttle</title>
+    <url>/2021/06/02/debounce/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>function</category>
+      </categories>
+      <tags>
+        <tag>防抖、节流</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Symbol.iterator &amp; 生成器函数</title>
+    <url>/2021/05/31/Symbol-iterator/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>javascript</category>
+      </categories>
+  </entry>
+</search>
