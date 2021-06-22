@@ -133,14 +133,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -183,6 +183,97 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://uihh.cn/2021/06/22/watch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/user.jpeg">
+      <meta itemprop="name" content="yyxxx229">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/06/22/watch/" class="post-title-link" itemprop="url">Vue中watch用法详解</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2021-06-22 19:01:52 / 修改时间：19:48:57" itemprop="dateCreated datePublished" datetime="2021-06-22T19:01:52+08:00">2021-06-22</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>  当data中变量的值变化时，watch监听到并且执行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	<span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			<span class="attr">value</span>:<span class="string">&#x27;&#x27;</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">watch</span>:&#123;</span><br><span class="line">		<span class="function"><span class="title">value</span>(<span class="params">newVal, oldVal</span>)</span>&#123;</span><br><span class="line">			<span class="comment">/* 要执行操作 */</span> </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="handler方法和immediate属性"><a href="#handler方法和immediate属性" class="headerlink" title="handler方法和immediate属性"></a>handler方法和immediate属性</h2><p>  上面的例子只有value的值变化时，watch才会执行。如果想从开始的时候就对value进行监听，就需要用到 <code>handler</code> 和 <code>immediate</code>属性</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">watch:&#123;</span><br><span class="line">	<span class="attr">value</span>:&#123;</span><br><span class="line">		<span class="function"><span class="title">handler</span>(<span class="params">newVal, oldVla</span>)</span> &#123;</span><br><span class="line">			<span class="comment">/* 要执行操作 */</span> </span><br><span class="line">		&#125;,</span><br><span class="line">		<span class="comment">// 当immediate 值为true时, 会立即执行handler方法</span></span><br><span class="line">		<span class="comment">// 如果值为false，效果同上面例子</span></span><br><span class="line">		<span class="attr">immediate</span>:<span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="deep属性（深度监听）"><a href="#deep属性（深度监听）" class="headerlink" title="deep属性（深度监听）"></a>deep属性（深度监听）</h2><blockquote>
+<p>当需要监听一个对象的改变时，普通的watch方法无法监听到对象内部属性的改变。需要添加deep属性对 对象进行深度监听</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	<span class="function"><span class="title">data</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> &#123;</span><br><span class="line">			<span class="attr">obj</span>:&#123;</span><br><span class="line">				<span class="attr">a</span>: <span class="number">1</span>,</span><br><span class="line">				<span class="attr">b</span>: <span class="number">2</span>,</span><br><span class="line">				<span class="attr">c</span>:&#123;</span><br><span class="line">					<span class="attr">d</span>:<span class="number">3</span></span><br><span class="line">					<span class="attr">f</span>:<span class="number">4</span></span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="attr">watch</span>:&#123;</span><br><span class="line">		<span class="attr">obj</span>:&#123;</span><br><span class="line">			<span class="function"><span class="title">handler</span>(<span class="params">newVal, oldVal</span>)</span>&#123;&#125;,</span><br><span class="line">			<span class="attr">immediate</span>:<span class="literal">true</span>,</span><br><span class="line">			<span class="attr">deep</span>:<span class="literal">true</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>此时会给整个对象的属性都加上监听，当对象属性较多时，每个值变化都会触发handler函数。<br>如果只需要监听一个属性，可以使用字符串形式监听对象内的单个属性</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">watch:&#123;</span><br><span class="line">	<span class="string">&#x27;c.d&#x27;</span>:&#123;</span><br><span class="line">		<span class="function"><span class="title">handler</span>(<span class="params">newVla, oldVal</span>)</span>&#123;&#125;,</span><br><span class="line">		<span class="attr">immediate</span>:<span class="literal">true</span>,</span><br><span class="line">		<span class="attr">deep</span>:<span class="literal">true</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>数组（一维、多维）的变化不需要通过深度监听，对象数组中对象的属性变化需要deep的深度监听</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -430,7 +521,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-07 17:03:21" itemprop="dateModified" datetime="2021-06-07T17:03:21+08:00">2021-06-07</time>
+        <time title="修改时间：2021-06-22 19:02:04" itemprop="dateModified" datetime="2021-06-22T19:02:04+08:00">2021-06-22</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
