@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Promise</title>
+    <url>/2021/06/07/Promise/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>Promise</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>webpack</title>
+    <url>/2021/06/07/webpack/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LazyFunction</title>
     <url>/2021/06/03/LazyFunction/</url>
     <content><![CDATA[]]></content>
