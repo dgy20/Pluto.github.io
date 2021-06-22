@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Promise</title>
+    <url>/2021/06/07/Promise/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>Promise</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>webpack</title>
+    <url>/2021/06/07/webpack/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>webpack</category>
+      </categories>
+      <tags>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LazyFunction</title>
     <url>/2021/06/03/LazyFunction/</url>
     <content><![CDATA[]]></content>
@@ -11,23 +31,6 @@
       <tags>
         <tag>高阶函数</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Promise</title>
-    <url>/2021/06/07/Promise/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>javascript</category>
-        <category>Promise</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Symbol.iterator &amp; 生成器函数</title>
-    <url>/2021/05/31/Symbol-iterator/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>javascript</category>
-      </categories>
   </entry>
   <entry>
     <title>debounce &amp; throttle</title>
@@ -42,14 +45,11 @@
       </tags>
   </entry>
   <entry>
-    <title>webpack</title>
-    <url>/2021/06/07/webpack/</url>
+    <title>Symbol.iterator &amp; 生成器函数</title>
+    <url>/2021/05/31/Symbol-iterator/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>webpack</category>
+        <category>javascript</category>
       </categories>
-      <tags>
-        <tag>webpack</tag>
-      </tags>
   </entry>
 </search>
