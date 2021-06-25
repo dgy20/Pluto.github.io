@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>debounce &amp; throttle</title>
-    <url>/2021/06/02/debounce/</url>
+    <title>call()和apply()</title>
+    <url>/2021/06/24/call/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>javascript</category>
         <category>function</category>
       </categories>
       <tags>
-        <tag>防抖、节流</tag>
+        <tag>call&amp;apply</tag>
       </tags>
   </entry>
   <entry>
-    <title>Vue中watch用法详解</title>
-    <url>/2021/06/22/watch/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Vue</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Symbol.iterator &amp; 生成器函数</title>
-    <url>/2021/05/31/Symbol-iterator/</url>
+    <title>Array常用方法</title>
+    <url>/2021/06/24/Array/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>javascript</category>
+        <category>Array</category>
       </categories>
+      <tags>
+        <tag>数组常用方法</tag>
+      </tags>
   </entry>
   <entry>
     <title>接口的错误拦截</title>
@@ -37,15 +33,23 @@
       </categories>
   </entry>
   <entry>
-    <title>LazyFunction</title>
-    <url>/2021/06/03/LazyFunction/</url>
+    <title>Vue中watch用法详解</title>
+    <url>/2021/06/22/watch/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Promise</title>
+    <url>/2021/06/07/Promise/</url>
     <content><![CDATA[]]></content>
       <categories>
         <category>javascript</category>
-        <category>function</category>
+        <category>Promise</category>
       </categories>
       <tags>
-        <tag>高阶函数</tag>
+        <tag>promise</tag>
       </tags>
   </entry>
   <entry>
@@ -60,11 +64,39 @@
       </tags>
   </entry>
   <entry>
-    <title>Promise</title>
-    <url>/2021/06/07/Promise/</url>
+    <title>LazyFunction</title>
+    <url>/2021/06/03/LazyFunction/</url>
     <content><![CDATA[]]></content>
       <categories>
-        <category>Promise</category>
+        <category>javascript</category>
+        <category>function</category>
       </categories>
+      <tags>
+        <tag>高阶函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>debounce &amp; throttle</title>
+    <url>/2021/06/02/debounce/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>function</category>
+      </categories>
+      <tags>
+        <tag>防抖、节流</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Symbol.iterator &amp; 生成器函数</title>
+    <url>/2021/05/31/Symbol-iterator/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>javascript</category>
+        <category>function</category>
+      </categories>
+      <tags>
+        <tag>生成器、迭代器</tag>
+      </tags>
   </entry>
 </search>
