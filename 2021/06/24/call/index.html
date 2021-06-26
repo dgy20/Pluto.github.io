@@ -23,10 +23,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="call()和apply()">
 <meta property="og:url" content="https://uihh.cn/2021/06/24/call/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="yyxxx">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-24T08:06:13.000Z">
-<meta property="article:modified_time" content="2021-06-25T12:56:01.767Z">
+<meta property="article:modified_time" content="2021-06-26T06:12:08.404Z">
 <meta property="article:author" content="yyxxx229">
 <meta property="article:tag" content="call&amp;apply">
 <meta name="twitter:card" content="summary">
@@ -39,7 +39,7 @@
 <script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://uihh.cn/2021/06/24/call/","path":"2021/06/24/call/","title":"call()和apply()"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>call()和apply() | Hexo</title>
+<title>call()和apply() | yyxxx</title>
   
 
 
@@ -48,7 +48,7 @@
   <noscript>
     <link rel="stylesheet" href="/css/noscript.css">
   </noscript>
-<link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="yyxxx" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
@@ -69,7 +69,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">Hexo</h1>
+      <h1 class="site-title">yyxxx</h1>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -130,7 +130,7 @@
     <img class="site-author-image" itemprop="image" alt="yyxxx229"
       src="/images/user.jpeg">
   <p class="site-author-name" itemprop="name">yyxxx229</p>
-  <div class="site-description" itemprop="description"></div>
+  <div class="site-description" itemprop="description">最烦两种人，一种让我砍pdd的，一种不帮我砍pdd的(doge)</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
@@ -202,11 +202,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/user.jpeg">
       <meta itemprop="name" content="yyxxx229">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content="最烦两种人，一种让我砍pdd的，一种不帮我砍pdd的(doge)">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="yyxxx">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
@@ -228,7 +228,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-06-25 20:56:01" itemprop="dateModified" datetime="2021-06-25T20:56:01+08:00">2021-06-25</time>
+        <time title="修改时间：2021-06-26 14:12:08" itemprop="dateModified" datetime="2021-06-26T14:12:08+08:00">2021-06-26</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -268,7 +268,7 @@
 <p>这样Class2就继承Class1了，Class1.call(this)的意思就是使用Class1对象代替this对象，那么Class2中就可以有了Class1的所有属性和方法了，c2对象就能够直接调用Class1的方法及属性，执行结果就是console.log(‘cc’);<br>使用<code>call()</code>继承的弊端： 如果Class1后续向<code>prototype</code>添加了新的属性或方法，Class2拿不到新增的属性和方法</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class1.prototype.name = <span class="string">&#x27;class1&#x27;</span></span><br><span class="line"><span class="built_in">console</span>.log(c2.name) <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
 <h3 id="call-原理"><a href="#call-原理" class="headerlink" title="call()原理"></a>call()原理</h3><p>js实现call</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">a, b, c, d</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="built_in">this</span>.name,</span><br><span class="line">        <span class="attr">a</span>: a, <span class="attr">b</span>: b, <span class="attr">c</span>: c, <span class="attr">d</span>: d</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> yx = &#123; <span class="attr">name</span>: <span class="string">&#x27;yx&#x27;</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Function</span>.prototype.newCall = <span class="function"><span class="keyword">function</span> (<span class="params">obj, ...args</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> obj = obj || <span class="built_in">window</span>;</span><br><span class="line">      obj.p = <span class="built_in">this</span>;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * 这一句也可实现</span></span><br><span class="line"><span class="comment">       * var result = obj.p(...args);</span></span><br><span class="line"><span class="comment">       * */</span> </span><br><span class="line">      <span class="keyword">var</span> newArgs = [];</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; args.length; i++) &#123;</span><br><span class="line">        newArgs.push(<span class="string">&#x27;args[&#x27;</span> + i + <span class="string">&#x27;]&#x27;</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> result = <span class="built_in">eval</span>(<span class="string">&#x27;obj.p(&#x27;</span> + newArgs + <span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">      <span class="keyword">delete</span> obj.p;</span><br><span class="line">      <span class="keyword">return</span> result</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> bib = person.newCall(yx, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(bib);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">person</span>(<span class="params">a, b, c, d</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="built_in">this</span>.name,</span><br><span class="line">        <span class="attr">a</span>: a, <span class="attr">b</span>: b, <span class="attr">c</span>: c, <span class="attr">d</span>: d</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> yx = &#123; <span class="attr">name</span>: <span class="string">&#x27;yx&#x27;</span> &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Function</span>.prototype.newCall = <span class="function"><span class="keyword">function</span> (<span class="params">obj, ...args</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> obj = obj || <span class="built_in">window</span>;</span><br><span class="line">      obj.p = <span class="built_in">this</span>;</span><br><span class="line">      <span class="comment">/**</span></span><br><span class="line"><span class="comment">       * var result = obj.p(...args);</span></span><br><span class="line"><span class="comment">       * */</span> </span><br><span class="line">      <span class="keyword">var</span> newArgs = [];</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; args.length; i++) &#123;</span><br><span class="line">        newArgs.push(<span class="string">&#x27;args[&#x27;</span> + i + <span class="string">&#x27;]&#x27;</span>)</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">var</span> result = <span class="built_in">eval</span>(<span class="string">&#x27;obj.p(&#x27;</span> + newArgs + <span class="string">&#x27;)&#x27;</span>)</span><br><span class="line">      <span class="keyword">delete</span> obj.p;</span><br><span class="line">      <span class="keyword">return</span> result</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> bib = person.newCall(yx, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>)</span><br><span class="line">    <span class="built_in">console</span>.log(bib);</span><br></pre></td></tr></table></figure>
 <h2 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h2><h3 id="apply-的使用方法"><a href="#apply-的使用方法" class="headerlink" title="apply()的使用方法"></a>apply()的使用方法</h3><blockquote>
 <p>语法： function.apply(thisArg, [argArr])</p>
 </blockquote>
